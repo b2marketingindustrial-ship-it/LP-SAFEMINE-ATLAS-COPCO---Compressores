@@ -16,14 +16,11 @@ import heroBg from '@assets/heroBg.png'
 
 /* ------------------------------------------------------------------ tipos */
 
-/** Linha da faixa "Encontre a linha" no pé do hero. Cada card é um CTA. */
-export interface HeroLine {
-  id: string
+/** Ponto da caixa de ícones do hero: `line1` e `line2` ficam sempre em duas linhas. */
+export interface HeroPoint {
   icon: IconName
-  title: string
-  /** Dado de destaque sob o título; mais de um item entra separado por divisória. */
-  spec: readonly string[]
-  description: string
+  line1: string
+  line2: string
 }
 
 export interface TrustItem {
@@ -40,8 +37,6 @@ export const cta = {
   secondary: 'Identifique seu compressor',
   card: 'Falar com especialista',
   whatsapp: 'Chamar no WhatsApp',
-  /** Link do hero que rola até a seção de linhas. Não é CTA de atendimento. */
-  findLine: 'Encontrar minha linha',
 } as const
 
 /* ------------------------------------------------------------------ header */
@@ -66,59 +61,24 @@ export const hero = {
     src: heroBg,
     alt: 'Compressores portáteis Atlas Copco em área de mineração',
     /** Larguras geradas: as mesmas no <Picture> do Hero e no preload do Layout. */
-    widths: [480, 768, 1020],
-    sizes: '(min-width: 1024px) 46vw, 100vw',
+    widths: [640, 1024, 1536, 1981],
+    sizes: '(min-width: 1024px) 1700px, 100vw',
   },
-  help: {
-    title: 'Não sabe a vazão ou a pressão?',
-    text: 'Descreva o serviço. Nós ajudamos na seleção.',
-  },
-  lines: {
-    title: 'Encontre a linha para a sua aplicação',
-    note: 'Vazão e pressão variam conforme o modelo e a configuração.',
-    items: [
-      {
-        id: 'small-air',
-        icon: 'road',
-        title: 'Small Air',
-        spec: ['100 a 190 CFM'],
-        description: 'Sinalização rodoviária, demolição e perfuração manual.',
-      },
-      {
-        id: 'medium-air',
-        icon: 'blast',
-        title: 'Medium Air',
-        spec: ['Versatilidade por aplicação'],
-        description: 'Jateamento abrasivo, concreto projetado e perfuração de rocha.',
-      },
-      {
-        id: 'large-air',
-        icon: 'drill',
-        title: 'Large Air',
-        spec: ['Até 1.567 CFM', 'até 30 bar'],
-        description: 'Poços artesianos, fundações e geotecnia.',
-      },
-      {
-        id: 'eletricos',
-        icon: 'plug',
-        title: 'Linha elétrica',
-        spec: ['Motor WEG'],
-        description: 'Para operações com alimentação elétrica disponível.',
-      },
-    ],
-  },
+  points: [
+    { icon: 'road', line1: 'Small Air', line2: '100 a 190 CFM' },
+    { icon: 'blast', line1: 'Medium Air', line2: 'por aplicação' },
+    { icon: 'drill', line1: 'Large Air', line2: 'até 1.567 CFM' },
+  ],
+  /** Aviso sob os botões: os dados acima variam por modelo e configuração. */
+  note: 'Vazão e pressão variam conforme o modelo e a configuração.',
 } as const satisfies {
   eyebrow: string
   title: string
   text: string
   highlight: string
   banner: Photo & { widths: readonly number[]; sizes: string }
-  help: { title: string; text: string }
-  lines: {
-    title: string
-    note: string
-    items: readonly [HeroLine, HeroLine, HeroLine, HeroLine]
-  }
+  points: readonly [HeroPoint, HeroPoint, HeroPoint]
+  note: string
 }
 
 /* ----------------------------------------------------------------- cotação */
