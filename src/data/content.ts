@@ -42,11 +42,8 @@ export const cta = {
 /* ------------------------------------------------------------------ header */
 
 export const header = {
-  /** Âncoras da barra (desvio do padrão, pedido no mockup de 29/10): rolam até as seções. */
-  nav: [
-    { id: 'compressores', label: 'Compressores', href: '#linhas' },
-    { id: 'aplicacoes', label: 'Aplicações', href: '#aplicacoes' },
-  ],
+  /** Tagline central da barra (estrutura fixa 4.1.1): o produto principal. */
+  tagline: 'Compressores portáteis',
 } as const
 
 /* -------------------------------------------------------------------- hero */
