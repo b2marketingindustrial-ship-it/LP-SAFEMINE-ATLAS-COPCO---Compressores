@@ -149,6 +149,8 @@ Se este topo virar padrão, a mudança é no starter (template + `check-lp.mjs`)
 
 As 9 fotos recortadas dos mockups (4 de `linhas`, 4 de `aplicacoes` e `diferenciais/cenario.jpg`) foram registradas em `placeholders.json` como imagens de exemplo, com a anotação "provisória: recorte do mockup". Sem isso, o `npm run verify` passaria inteiro e o próximo push publicaria os recortes na branch `wp-build`, que o plugin do WordPress lê. Com o registro, `check:lp:rascunho` as tolera (os 3 slots seguem em `assets.pendentes`) e o `verify` e o CI as barram. Quando a foto original chegar, ela substitui o arquivo com o mesmo nome e a assinatura deixa de bater — não é preciso mexer na lista.
 
+**Liberadas em 03/11/2026.** A pedido do usuário, para publicar a branch `wp-build`, os 9 recortes saíram de `placeholders.json` e foram aceitos como fotos da página até chegarem as originais. O `check:lp` passa a tratá-los como fotos do cliente; os avisos de tamanho e recorte continuam. Ao receber as originais, basta substituir os arquivos com o mesmo nome.
+
 ### Seção "Linhas por porte"
 
 Também em 29/10/2026, a seção `linhas` passou ao layout do mockup seguinte: cabeçalho em duas colunas com "cada exigência de ar" em verde, 4 cards claros (sem o card escuro da biblioteca) com foto, vazão e pressão lado a lado, motor e botão "Falar com especialista" de largura total, e a faixa "Não sabe qual compressor escolher?" com o CTA `linhas-orientacao`. A partir de 1280 px os cards são subgrid, para título, dados e motor ficarem alinhados; abaixo disso, 2 colunas.
