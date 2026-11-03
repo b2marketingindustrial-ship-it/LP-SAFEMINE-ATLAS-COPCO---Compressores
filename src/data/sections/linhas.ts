@@ -25,6 +25,8 @@ export interface ProductLine {
   description: string
   photo: Photo
   features: readonly [string, string, string]
+  /** Para que serviço o porte serve (era a descrição; a ficha define o porte pela aplicação). */
+  idealFor: string
   /** Exatamente um card escuro por grid. Informe sempre (true/false). */
   dark: boolean
 }
@@ -34,50 +36,51 @@ export const productLines = {
   title: 'Compressores portáteis para cada exigência de ar',
   /** Trecho do título em verde, na segunda linha. */
   titleHighlight: 'cada exigência de ar',
-  text: 'Escolha pela aplicação. Cada porte combina vazão, pressão e motor para um tipo de serviço em campo.',
+  text: 'Cada porte combina vazão, pressão e motor para um tipo de serviço em campo.',
   /** Rótulos das duas primeiras features de cada card. */
   specLabels: ['Vazão', 'Pressão'],
-  help: {
-    title: 'Não sabe qual compressor escolher?',
-    text: 'Descreva sua aplicação. A Safe Mine ajuda na seleção.',
-    cta: 'Receber orientação',
-  },
+  /** Rótulo da linha "quando escolher" de cada card. */
+  idealForLabel: 'Indicado para',
   note: 'Vazão e pressão variam conforme o modelo e a configuração.',
   items: [
     {
       id: 'small-air',
       tag: 'Pequeno porte',
       title: 'Small Air',
-      description: 'Sinalização rodoviária, demolição e perfuração manual.',
+      description: 'Modelos XAS 58-88 e U110-190, para serviços leves em campo.',
       photo: { src: linha1, alt: 'Compressor portátil Small Air' },
       features: ['100 a 190 CFM', '7 a 10 bar', 'Motor Kubota'],
+      idealFor: 'Sinalização rodoviária, demolição e perfuração manual.',
       dark: false,
     },
     {
       id: 'medium-air',
       tag: 'Médio porte',
       title: 'Medium Air',
-      description: 'Jateamento abrasivo, concreto projetado e perfuração de rocha.',
+      description: 'Modelos XAS, XATS e XAHS 300Pd e a linha X-AIR.',
       photo: { src: linha2, alt: 'Compressor portátil Medium Air' },
       features: ['272 a 404 CFM', '7 a 14 bar', 'Motor Perkins'],
+      idealFor: 'Jateamento abrasivo, concreto projetado e perfuração de rocha.',
       dark: false,
     },
     {
       id: 'large-air',
       tag: 'Grande vazão',
       title: 'Large Air',
-      description: 'Poços artesianos, fundações e geotecnia, com alta vazão e pressão.',
+      description: 'Modelos X1200 e XAVS1600, com alta vazão e pressão.',
       photo: { src: linha3, alt: 'Compressor portátil Large Air' },
       features: ['Até 1.567 CFM', 'Até 30 bar', 'Motores MWM e Scania'],
+      idealFor: 'Poços artesianos, fundações e geotecnia.',
       dark: false,
     },
     {
       id: 'eletricos',
       tag: 'Elétrico',
       title: 'Elétricos WEG',
-      description: 'Modelos T400 a V1100 com motor WEG e acionamento elétrico.',
+      description: 'Modelos T400, T500, T900 e V1100, com acionamento elétrico.',
       photo: { src: marcasPhoto, alt: 'Compressor portátil elétrico com motor WEG' },
       features: ['403 a 1.100 CFM', '10 bar', 'Motor elétrico WEG'],
+      idealFor: 'Operações com energia elétrica disponível no local.',
       dark: true,
     },
   ],
@@ -87,7 +90,7 @@ export const productLines = {
   titleHighlight: string
   text: string
   specLabels: readonly [string, string]
-  help: { title: string; text: string; cta: string }
+  idealForLabel: string
   note: string
   items:
     | readonly [ProductLine, ProductLine, ProductLine]

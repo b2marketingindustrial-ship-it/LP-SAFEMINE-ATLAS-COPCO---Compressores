@@ -489,7 +489,7 @@ Em relação ao briefing organizado, `linhas` subiu de "quase" para "completo": 
 | Área atendida da campanha                  | B2                      | a conta Google Ads (446-892-6092) ainda não tem campanha; define selo ou texto da cotação                  |
 | URL final e política de privacidade        | B2 + Safe Mine          | `site.url` e `privacyUrl`                                                                                  |
 | W1000 x W1100 e H185/H250/H450             | Safe Mine               | libera a tabela técnica e, se elétricos, amplia a linha WEG                                                |
-| Distribuição autorizada e logo Atlas Copco | Safe Mine               | libera "distribuidor autorizado" e o carrossel de marcas                                                   |
+| Distribuição autorizada e logo Atlas Copco | Safe Mine               | libera "distribuidor autorizado"; a logo já está no header (03/11/2026), falta a oficial em alta           |
 | FAQ validado pelo comercial                | Safe Mine               | prazo de entrega, disponibilidade de modelos e região atendida                                             |
 | Processo real de atendimento               | Safe Mine               | libera `processo` como alternativa no apoio                                                                |
 
